@@ -1,0 +1,4 @@
+<div *ngIf="showNotFoundError" [ngClass]="'no-data-found-wrapper '+ fontSizeClass">
+  <mat-icon class="material-icons" color="{{color ? color : 'warn'}}">error</mat-icon>
+  <span class="no-data-found">{{message ? message : 'No Data Found!'}}</span>
+</div>

@@ -1,0 +1,35 @@
+//importing to unlock the Angular theme
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+//included to add base styles of the Angular
+@include mat-core();
+// initializing the color values
+$app-primary: mat-palette($mat-indigo, 500, 50);
+$app-accent:  mat-palette($mat-grey, 600);
+$app-warn:    mat-palette($mat-amber, 500);
+
+// initializing the theme
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+// initializing the new typography
+$app-typography: mat-typography-config(
+  $font-family: 'Muli'
+);
+
+// Assigning the typography to the app
+@include mat-core($app-typography);
+
+// Assigning the theme to the app
+@include angular-material-theme($app-theme);
+
+
+.app-color {
+  color: mat-color($app-primary);
+}
+.app-bg {
+  background: mat-color($app-primary);
+}
+@mixin primarybg {
+  background: mat-color($app-primary);
+  @content;
+}
